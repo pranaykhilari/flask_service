@@ -1,8 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-from urls import url
-
 app = Flask(__name__)
 
 # Database connectivity
@@ -13,11 +11,12 @@ db = SQLAlchemy(app)
 
 # We define model in Models package. Below import statement is unused but it will tell flask-migrate to find
 # models in models package.
-
 import models
 
 # Set the url configuration using blueprint
-url(app)
+from urls import routes
+
+app = routes(app)
 
 if __name__ == '__main__':
     app.run(debug=True)

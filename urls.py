@@ -1,5 +1,6 @@
-from employee import api_bp
+from app_services.student import student_blueprint
 
 
-def url(app):
-    app.register_blueprint(api_bp, url_prefix='/')
+def routes(app):
+    app.register_blueprint(student_blueprint, url_prefix='/student')
+    return app
