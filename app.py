@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_swagger_ui import get_swaggerui_blueprint
 
 app = Flask(__name__)
 
@@ -20,4 +21,5 @@ app = routes(app)
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
