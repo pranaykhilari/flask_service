@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_swagger_ui import get_swaggerui_blueprint
+from flask_restplus import Api
+from flask_cors import CORS
 
 app = Flask(__name__)
 
@@ -10,8 +11,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+# Handle the cross site request error
+cors = CORS(app)
+
 # We define model in Models package. Below import statement is unused but it will tell flask-migrate to find
 # models in models package.
+
 import models
 
 # Set the url configuration using blueprint
@@ -19,7 +24,9 @@ from urls import routes
 
 app = routes(app)
 
+api = Api(app, version='1.0', title='Sample API',
+          description='A sample API'
+          )
+
 if __name__ == '__main__':
     app.run(debug=True)
-
-

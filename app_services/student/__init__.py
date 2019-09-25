@@ -1,5 +1,5 @@
 from flask import Blueprint
-from flask_restful import Api
+from flask_restplus import Api
 
 from .resource import StudentAPI
 
@@ -10,7 +10,8 @@ routes = [
     '/add',
     '/get/<int:student_id>',
     '/get',
-    '/delete/<int:student_id>'
+    '/delete/<int:student_id>',
+    '/edit/<int:student_id>'
 ]
 
 api.add_resource(StudentAPI, *routes)

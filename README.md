@@ -1,2 +1,2 @@
 # flask_service
-Creating flask restful API.
+Creating flask restplus API.

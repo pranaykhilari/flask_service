@@ -1,6 +1,6 @@
-from flask import jsonify, abort
+from flask import jsonify
 from flask_api import status
-from flask_restful import reqparse, Resource
+from flask_restplus import reqparse, Resource
 
 from app import db
 from models.student import Student
