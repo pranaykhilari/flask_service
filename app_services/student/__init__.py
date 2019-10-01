@@ -4,7 +4,7 @@ from flask_restplus import Api
 from .resource import StudentAPI
 
 student_blueprint = Blueprint('student', __name__)
-api = Api(student_blueprint)
+student_api = Api(student_blueprint)
 
 routes = [
     '/add',
@@ -14,5 +14,5 @@ routes = [
     '/edit/<int:student_id>'
 ]
 
-api.add_resource(StudentAPI, *routes)
+student_api.add_resource(StudentAPI, *routes)
 

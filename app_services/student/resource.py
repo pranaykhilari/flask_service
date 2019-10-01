@@ -65,3 +65,4 @@ class StudentAPI(Resource):
         db.session.commit()
 
         return jsonify(result=student_schema.dump(student), status=status.HTTP_202_ACCEPTED)
+

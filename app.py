@@ -8,6 +8,7 @@ app = Flask(__name__)
 # Database connectivity
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://entercoms:tudip@123@localhost:5432/entercoms'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SECRET_KEY'] = '02814be6738fa76067457ec6b5af7b46512ded6f8202b77e'
 
 db = SQLAlchemy(app)
 
