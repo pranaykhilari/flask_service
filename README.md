@@ -18,16 +18,22 @@
 
 * Connect to postgresql DB
 
-    * sudo –i –u postgres psql
+    * ```sudo –i –u postgres psql```
 * List the Databases
-    * \list or \l: list all databases
+    * ```\list or \l:``` list all databases
 
 * To switch Database
-    * \connect database_name or \c database_name
+    * ```\connect database_name or \c database_name```
     
 * List tables in selected database
-    * \dt
+    * ```\dt```
     
 * Drop table
-    * DROP table **table_name**
+    * ```DROP table **table_name**```
+    
+# Run Test cases
+
+* Once application is running we can check our test cases 
+    
+    * ```pytest -v``` 
     

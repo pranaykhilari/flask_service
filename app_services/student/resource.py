@@ -33,10 +33,11 @@ class StudentAPI(Resource):
         if student_id:
             student = Student.query.filter(Student.id == student_id).first()
             data = student_schema.dump(student)
+            if not data:
+                return jsonify(result=data, status=status.HTTP_404_NOT_FOUND)
         else:
             student = Student.query.all()
             data = students_schema.dump(student)
-
         return jsonify(result=data, status=status.HTTP_200_OK)
 
     def delete(self, student_id):
